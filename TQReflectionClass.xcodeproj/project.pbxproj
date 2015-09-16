@@ -15,6 +15,7 @@
 		E073CBFD1BA9AE0E0043E615 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E073CBFB1BA9AE0E0043E615 /* LaunchScreen.xib */; };
 		E073CC091BA9AE0E0043E615 /* TQReflectionClassTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E073CC081BA9AE0E0043E615 /* TQReflectionClassTests.m */; };
 		E073CC151BA9AE9C0043E615 /* NSObject+TQReflectionClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E073CC141BA9AE9C0043E615 /* NSObject+TQReflectionClass.m */; };
+		E073CC181BA9BB440043E615 /* TQReflectionClassHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E073CC171BA9BB440043E615 /* TQReflectionClassHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		E073CC081BA9AE0E0043E615 /* TQReflectionClassTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TQReflectionClassTests.m; sourceTree = "<group>"; };
 		E073CC131BA9AE9C0043E615 /* NSObject+TQReflectionClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+TQReflectionClass.h"; sourceTree = "<group>"; };
 		E073CC141BA9AE9C0043E615 /* NSObject+TQReflectionClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TQReflectionClass.m"; sourceTree = "<group>"; };
+		E073CC161BA9BB440043E615 /* TQReflectionClassHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQReflectionClassHelper.h; sourceTree = "<group>"; };
+		E073CC171BA9BB440043E615 /* TQReflectionClassHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQReflectionClassHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +129,8 @@
 		E073CC121BA9AE7F0043E615 /* ReflectionClass */ = {
 			isa = PBXGroup;
 			children = (
+				E073CC161BA9BB440043E615 /* TQReflectionClassHelper.h */,
+				E073CC171BA9BB440043E615 /* TQReflectionClassHelper.m */,
 				E073CC131BA9AE9C0043E615 /* NSObject+TQReflectionClass.h */,
 				E073CC141BA9AE9C0043E615 /* NSObject+TQReflectionClass.m */,
 			);
@@ -235,6 +240,7 @@
 				E073CC151BA9AE9C0043E615 /* NSObject+TQReflectionClass.m in Sources */,
 				E073CBF51BA9AE0E0043E615 /* ViewController.m in Sources */,
 				E073CBF21BA9AE0E0043E615 /* AppDelegate.m in Sources */,
+				E073CC181BA9BB440043E615 /* TQReflectionClassHelper.m in Sources */,
 				E073CBEF1BA9AE0E0043E615 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

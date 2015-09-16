@@ -10,6 +10,11 @@
 
 @interface ViewController : UIViewController
 
+@property (nonatomic,assign) BOOL boolValue;
+
+@property (nonatomic,assign) int intValue;
+
+@property (nonatomic, readonly, copy) id idReadonlyCopyNonatomic;
 
 @end
 

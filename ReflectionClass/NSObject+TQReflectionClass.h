@@ -10,4 +10,14 @@
 
 @interface NSObject (TQReflectionClass)
 
++ (NSArray *)tq_classes;
+
++ (NSString *)tq_className;
+
++ (NSString *)tq_superclassName;
+
++ (NSArray *)tq_properties;
+
++ (NSArray *)tq_propertiesWithCodeFormat;
+
 @end
