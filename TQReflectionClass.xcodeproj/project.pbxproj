@@ -14,6 +14,7 @@
 		E073CBFA1BA9AE0E0043E615 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E073CBF91BA9AE0E0043E615 /* Images.xcassets */; };
 		E073CBFD1BA9AE0E0043E615 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E073CBFB1BA9AE0E0043E615 /* LaunchScreen.xib */; };
 		E073CC091BA9AE0E0043E615 /* TQReflectionClassTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E073CC081BA9AE0E0043E615 /* TQReflectionClassTests.m */; };
+		E073CC151BA9AE9C0043E615 /* NSObject+TQReflectionClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E073CC141BA9AE9C0043E615 /* NSObject+TQReflectionClass.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		E073CC021BA9AE0E0043E615 /* TQReflectionClassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TQReflectionClassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E073CC071BA9AE0E0043E615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E073CC081BA9AE0E0043E615 /* TQReflectionClassTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TQReflectionClassTests.m; sourceTree = "<group>"; };
+		E073CC131BA9AE9C0043E615 /* NSObject+TQReflectionClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+TQReflectionClass.h"; sourceTree = "<group>"; };
+		E073CC141BA9AE9C0043E615 /* NSObject+TQReflectionClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TQReflectionClass.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,7 @@
 		E073CBE01BA9AE0E0043E615 = {
 			isa = PBXGroup;
 			children = (
+				E073CC121BA9AE7F0043E615 /* ReflectionClass */,
 				E073CBEB1BA9AE0E0043E615 /* TQReflectionClass */,
 				E073CC051BA9AE0E0043E615 /* TQReflectionClassTests */,
 				E073CBEA1BA9AE0E0043E615 /* Products */,
@@ -117,6 +121,15 @@
 				E073CC071BA9AE0E0043E615 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E073CC121BA9AE7F0043E615 /* ReflectionClass */ = {
+			isa = PBXGroup;
+			children = (
+				E073CC131BA9AE9C0043E615 /* NSObject+TQReflectionClass.h */,
+				E073CC141BA9AE9C0043E615 /* NSObject+TQReflectionClass.m */,
+			);
+			path = ReflectionClass;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E073CC151BA9AE9C0043E615 /* NSObject+TQReflectionClass.m in Sources */,
 				E073CBF51BA9AE0E0043E615 /* ViewController.m in Sources */,
 				E073CBF21BA9AE0E0043E615 /* AppDelegate.m in Sources */,
 				E073CBEF1BA9AE0E0043E615 /* main.m in Sources */,
@@ -416,6 +430,7 @@
 				E073CC0E1BA9AE0E0043E615 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E073CC0F1BA9AE0E0043E615 /* Build configuration list for PBXNativeTarget "TQReflectionClassTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +439,7 @@
 				E073CC111BA9AE0E0043E615 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
