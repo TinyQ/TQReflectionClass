@@ -43,6 +43,15 @@
     NSArray *propersFormat = [[[self class] superclass] tq_propertiesWithCodeFormat];
     
     NSLog(@"tq_propertiesWithCodeFormat : %@",propersFormat);
+    
+    NSDictionary *protocols = [[[self class] superclass] tq_protocols];
+    
+    NSLog(@"tq_protocols : %@",protocols);
+    
+    NSArray *protocolsFormat = [[[self class] superclass] tq_protocolsWithCodeFormat];
+    
+    NSLog(@"tq_protocolsWithCodeFormat : %@",protocolsFormat);
+    
 }
 
 - (void)didReceiveMemoryWarning {

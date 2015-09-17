@@ -20,4 +20,8 @@
 
 + (NSArray *)tq_propertiesWithCodeFormat;
 
++ (NSDictionary *)tq_protocols;
+
++ (NSArray *)tq_protocolsWithCodeFormat;
+
 @end

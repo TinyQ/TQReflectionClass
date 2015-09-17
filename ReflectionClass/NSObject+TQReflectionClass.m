@@ -62,45 +62,102 @@
 
 + (NSArray *)tq_propertiesWithCodeFormat
 {
-    NSMutableArray *propertieFormatArray = [NSMutableArray array];
+    NSMutableArray *array = [NSMutableArray array];
     
     NSArray *properties = [[self class] tq_properties];
     
     for (NSDictionary *item in properties)
     {
-        NSMutableString *format = [NSMutableString stringWithFormat:@"@property "];
-        //attribute
-        NSArray *attribute = [item objectForKey:@"attribute"];
-        if (attribute && attribute.count > 0)
-        {
-            //TODO:attributeArray 属性习惯性顺序优化
+        NSMutableString *format = ({
+        
+            NSMutableString *formatString = [NSMutableString stringWithFormat:@"@property "];
+            //attribute
+            NSArray *attribute = [item objectForKey:@"attribute"];
+            if (attribute && attribute.count > 0)
+            {
+                //TODO:attributeArray 属性习惯性顺序优化
+                
+                NSString *attributeStr = [NSString stringWithFormat:@"(%@)",[attribute componentsJoinedByString:@", "]];
+                
+                [formatString appendString:attributeStr];
+            }
             
-            NSString *attributeStr = [NSString stringWithFormat:@"(%@)",[attribute componentsJoinedByString:@", "]];
+            //type
+            NSString *type = [item objectForKey:@"type"];
+            if (type) {
+                [formatString appendString:@" "];
+                [formatString appendString:type];
+            }
             
-            [format appendString:attributeStr];
-        }
+            //name
+            NSString *name = [item objectForKey:@"name"];
+            if (name) {
+                [formatString appendString:@" "];
+                [formatString appendString:name];
+                [formatString appendString:@";"];
+            }
+            
+            formatString;
+        });
         
-        //type
-        NSString *type = [item objectForKey:@"type"];
-        if (type) {
-            [format appendString:@" "];
-            [format appendString:type];
-        }
-        
-        //name
-        NSString *name = [item objectForKey:@"name"];
-        if (name) {
-            [format appendString:@" "];
-            [format appendString:name];
-            [format appendString:@";"];
-        }
-        
-        [propertieFormatArray addObject:format];
+        [array addObject:format];
     }
+
+    return array;
+}
+
++ (NSDictionary *)tq_protocols
+{
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
     
+    unsigned int count;
+    Protocol * __unsafe_unretained * protocols = class_copyProtocolList([self class], &count);
+    for (int i = 0; i < count; i++)
+    {
+        Protocol *protocol = protocols[i];
+        
+        NSString *protocolName = [NSString stringWithCString:protocol_getName(protocol) encoding:NSUTF8StringEncoding];
+        
+        NSMutableArray *superProtocolArray = ({
+            
+            NSMutableArray *array = [NSMutableArray array];
+            
+            unsigned int superProtocolCount;
+            Protocol * __unsafe_unretained * superProtocols = protocol_copyProtocolList(protocol, &superProtocolCount);
+            for (int ii = 0; ii < superProtocolCount; ii++)
+            {
+                Protocol *superProtocol = superProtocols[ii];
+                
+                NSString *superProtocolName = [NSString stringWithCString:protocol_getName(superProtocol) encoding:NSUTF8StringEncoding];
+                
+                [array addObject:superProtocolName];
+            }
+            free(superProtocols);
+            
+            array;
+        });
+        
+        [dictionary setObject:superProtocolArray forKey:protocolName];
+    }
+    free(protocols);
     
+    return dictionary;
+}
+
++ (NSArray *)tq_protocolsWithCodeFormat
+{
+    NSMutableArray *result = [NSMutableArray array];
     
-    return propertieFormatArray;
+    [[[self class] tq_protocols] enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        
+        NSString *protocolName = key;
+        NSString *superProtocols = [obj componentsJoinedByString:@", "];
+        NSString *description = [NSString stringWithFormat:@"%@ <%@>",protocolName,superProtocols];
+        
+        [result addObject:description];
+    }];
+    
+    return result;
 }
 
 #pragma mark - helper
