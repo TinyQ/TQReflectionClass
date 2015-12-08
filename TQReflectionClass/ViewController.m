@@ -29,28 +29,27 @@
 //    NSLog(@"%@",[[self class] tq_classes]);
     
     NSString *className = [[self class] tq_className];
-    
     NSLog(@"tq_className : %@",className);
     
     NSString *superclassName = [[self class] tq_superclassName];
-    
     NSLog(@"tq_superclassName : %@",superclassName);
     
     NSArray *propers = [[self class] tq_properties];
-    
     NSLog(@"tq_properties : %@",propers);
-    
-    NSArray *propersFormat = [[[self class] superclass] tq_propertiesWithCodeFormat];
-    
-    NSLog(@"tq_propertiesWithCodeFormat : %@",propersFormat);
+//    
+//    NSArray *propersFormat = [[[self class] superclass] tq_propertiesWithCodeFormat];
+//    
+//    NSLog(@"tq_propertiesWithCodeFormat : %@",propersFormat);
     
     NSDictionary *protocols = [[[self class] superclass] tq_protocols];
-    
     NSLog(@"tq_protocols : %@",protocols);
     
-    NSArray *protocolsFormat = [[[self class] superclass] tq_protocolsWithCodeFormat];
+//    NSArray *protocolsFormat = [[[self class] superclass] tq_protocolsWithCodeFormat];
+//    
+//    NSLog(@"tq_protocolsWithCodeFormat : %@",protocolsFormat);
     
-    NSLog(@"tq_protocolsWithCodeFormat : %@",protocolsFormat);
+    NSArray *instanceVariables = [[[self class] superclass] tq_instanceVariables];
+    NSLog(@"instanceVariables : %@",instanceVariables);
     
 }
 

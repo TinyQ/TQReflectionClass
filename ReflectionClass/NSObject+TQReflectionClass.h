@@ -18,9 +18,13 @@
 
 + (NSArray *)tq_properties;
 
-+ (NSArray *)tq_propertiesWithCodeFormat;
-
 + (NSDictionary *)tq_protocols;
+
++ (NSArray *)tq_instanceVariables;
+
++ (NSArray *)tq_classMethods;
+
++ (NSArray *)tq_propertiesWithCodeFormat;
 
 + (NSArray *)tq_protocolsWithCodeFormat;
 
